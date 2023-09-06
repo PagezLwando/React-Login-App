@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import './login.js';
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -13,7 +12,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:3000/users/register', {
+      const response = await axios.post('http://127.0.0.1:3000/users/login', {
         username,
         email,
         password
@@ -32,7 +31,7 @@ function App() {
         <br></br>
       <div className='form'>
       <form onSubmit={handleSubmit}>
-      <legend>Sign up</legend>
+      <legend>Log in</legend>
         <br></br>
       <div className="form-group">
         <label>Username: </label>
@@ -50,10 +49,10 @@ function App() {
       </div>
       <br></br>
       <div className="buttons">
-      <button type="submit" className="button">Sign up</button>
+      <button type="submit" className="button">Log in</button>
         </div>
         <p className='forgot-password'>
-            Have an account? <a href='/login' >Sign in</a>
+            Dont have an account? <a href='/App.js' >Sign up</a>
         </p>
       </form>
     </div>
